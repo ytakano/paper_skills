@@ -4,7 +4,7 @@ Claude Code skills for writing and checking research papers.
 
 | Skill | Purpose |
 | --- | --- |
-| [`ai-manuscript-review`](skills/ai-manuscript-review/SKILL.md) | Reviews manuscripts drafted or edited with generative AI for recurring problems: terms used before definition, inconsistent figure series and colors, overused dashes and semicolons, unnecessary negation or contrast, overly long paragraphs, and excessive lists. Not a full peer review. |
+| [`ai-manuscript-review`](skills/ai-manuscript-review/SKILL.md) | Reviews manuscripts drafted or edited with generative AI for recurring problems: terms used before definition, inconsistent figure series and colors, overused dashes and semicolons, unnecessary negation or contrast, overly long paragraphs, excessive lists, and inconsistencies between newly edited parts and earlier parts. Not a full peer review. |
 | [`reference-audit`](skills/reference-audit/SKILL.md) | Verifies that each reference exists and that its bibliographic metadata is correct, then produces a Markdown report with links for human checking. |
 
 ## Installation

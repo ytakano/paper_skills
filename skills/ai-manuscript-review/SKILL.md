@@ -1,16 +1,16 @@
 ---
 name: ai-manuscript-review
-description: Review manuscripts drafted or edited with generative AI for recurring failure patterns - terms used before they are defined and prerequisites explained out of order; inconsistent data series, colors, and ordering across figures; overused parenthetical dashes and semicolons in English; unnecessary negation or contrast, including leaked editing instructions; overly long paragraphs; and excessive lists. Use for pre-submission and post-editing quality checks of AI-assisted papers (AI生成・AI編集した論文原稿のチェック). This is a targeted check, not a full peer review, and does not assess novelty, methodology, or statistical validity. Report findings with evidence and precise locations, changing text, figures, or data only when asked.
+description: Review manuscripts drafted or edited with generative AI for recurring failure patterns - terms used before they are defined and prerequisites explained out of order; inconsistent data series, colors, and ordering across figures; overused parenthetical dashes and semicolons in English; unnecessary negation or contrast, including leaked editing instructions; overly long paragraphs; excessive lists; and inconsistencies between newly edited or added parts and earlier parts of the manuscript. Use for pre-submission and post-editing quality checks of AI-assisted papers (AI生成・AI編集した論文原稿のチェック). This is a targeted check, not a full peer review, and does not assess novelty, methodology, or statistical validity. Report findings with evidence and precise locations, changing text, figures, or data only when asked.
 ---
 
 # AI manuscript review
 
-This review targets problems that recur in manuscripts drafted or edited with generative AI. Check whether readers can follow the prerequisites, interpret figures correctly, and retain the scientific meaning and natural flow of the writing after editing. Focus on the six areas below. Present the result as a targeted check, not as a completed general peer review or a validation of statistical soundness. Base every finding on what the text, figures, or data show; the same checks apply equally to human-written prose.
+This review targets problems that recur in manuscripts drafted or edited with generative AI. Check whether readers can follow the prerequisites, interpret figures correctly, and retain the scientific meaning and natural flow of the writing after editing. Focus on the seven areas below. Present the result as a targeted check, not as a completed general peer review or a validation of statistical soundness. Base every finding on what the text, figures, or data show; the same checks apply equally to human-written prose.
 
 ## Scope and available materials
 
 - Confirm the manuscript version, review scope, intended audience, target publication's requirements, and review language. Ask only about unknowns necessary for the work, and proceed with the portions that can be reviewed from the available context.
-- If the user limits the review to specific areas, review only those areas. Otherwise, review all six.
+- If the user limits the review to specific areas, review only those areas. Otherwise, review all seven.
 - If the manuscript is not in English, skip Section 3 unless the user asks for an equivalent punctuation check, and state the skip in the report. Apply the other areas in the manuscript's language.
 - Establish how the main text, figures, captions, and supplementary materials correspond. When source data, plotting code, pre-edit versions, or editing instructions are available, cross-check them as needed. Work only from materials actually supplied.
 - For text extracted from PDFs or similar formats, compare it with the original rendering to check reading order, symbols, equations, and line breaks. Inspect figures visually to verify colors, line styles, and layout. If images cannot be viewed, mark that part of the review as unverified.
@@ -19,10 +19,11 @@ This review targets problems that recur in manuscripts drafted or edited with ge
 
 ## Working tables
 
-Before evaluating Sections 1 and 2, build two working tables and use them as evidence for findings. Include them in the report when they reveal issues or when the user asks for them.
+Before evaluating Sections 1, 2, and 7, build these working tables and use them as evidence for findings. Include them in the report when they reveal issues or when the user asks for them.
 
 - **Term table:** term, abbreviation, symbol, or group name; first-use location; definition location; notes such as alternative names or changed meanings.
 - **Figure mapping table:** figure and panel; group or condition; legend label and order; color; line style or marker; plotted order; axis and unit.
+- **Claim and fact ledger:** each key claim, contribution, number, parameter, condition, or cross-reference; every location where it appears; the wording or value at each location; and whether the locations agree.
 
 ## 1. Terminology at first use and the order of prerequisite explanations
 
@@ -88,6 +89,20 @@ Review bulleted lists, numbered lists, and LaTeX itemize or enumerate environmen
 - When suggesting conversion to prose, verify the correspondence between the original items and the revision, and preserve necessary ordering, logical relationships, conditions, and numerical values. Keep scientifically independent conditions distinct rather than collapsing them into a single vague statement.
 - Balance Sections 5 and 6. Use short, coherent paragraphs and purposeful lists according to their roles, rather than fixing long paragraphs with excessive lists or excessive lists with unwieldy paragraphs.
 
+## 7. Consistency between edited parts and the rest of the manuscript
+
+When a manuscript is written or revised piece by piece with generative AI, a newly written or edited part often stops agreeing with parts written earlier. The edited part may read well locally while contradicting the abstract, an earlier definition, or a later result. Check the manuscript as a whole for such drift.
+
+- **Identify the edited parts when possible.** If pre-edit and post-edit versions, a diff, version-control history, tracked changes, or a description of what was edited are available, list the changed passages first. For each change, trace every other place that states, depends on, or refers to the same content, and check that those places were updated to match. Without editing history, compare statements that should agree across the whole manuscript, and do not claim which part was edited later.
+- **Claims and contributions:** Check that the problem statement, contributions, and conclusions agree across the title, abstract, introduction, discussion, and conclusion. Look for contributions promised in the introduction but never delivered, results or conclusions that claim more or less than the evidence, and limitations that contradict claims elsewhere.
+- **Numbers and conditions:** Check that values, sample sizes, parameters, datasets, baselines, metrics, and experimental conditions agree among the text, tables, figures, captions, and supplementary materials. Distinguish a true contradiction from a legitimately different value, such as a different subset, rounding, or a different condition, and say which applies.
+- **Method and results:** Check that the method as described is the method whose results are reported. Look for steps, components, or settings described in Methods but absent from the experiments, and results that rely on steps never described.
+- **Terms and notation:** Check for a term, symbol, or abbreviation renamed or redefined in one part while earlier or later parts keep the old name or meaning. Report the order of definition under Section 1 and consistency of names and meanings across parts here.
+- **Cross-references and structure:** Check that references such as "Section 3," "Fig. 2," "Eq. (4)," "as described above," and "the following three steps" still point to existing content with the stated content and count. Check that a roadmap paragraph matches the actual section order, and look for content duplicated or left behind after text was moved.
+- **Tone, tense, and conventions:** Check for abrupt shifts in tense, person, spelling variety (such as American and British English), citation style, or level of hedging that mark a separately written part, when the shift affects readability or meaning.
+- Report each inconsistency with all conflicting locations and their exact wording or values. Do not decide on your own which version is correct; when the correct version cannot be determined from the supplied materials, ask the author. When one version is clearly the intended one, for example because it matches source data, say so and cite the evidence.
+- Consolidate a single change with many unpropagated dependents into one finding that lists every affected location, rather than reporting each location separately.
+
 ## Evaluating and reporting findings
 
 After identifying a candidate, reread the surrounding text, captions, and relevant definitions to eliminate false positives before reporting it. Report only genuine findings; there is no quota. Consolidate repeated instances of the same underlying issue into a representative example and additional locations.
@@ -108,7 +123,7 @@ A Major finding may still need verification, and a Confirmed finding may be Mino
 
 ### Information to include in each finding
 
-1. **Area:** One of the six review areas.
+1. **Area:** One of the seven review areas.
 2. **Impact and certainty:** As defined above.
 3. **Location:** The file name and version, plus a retrievable location such as section, paragraph, short quotation, figure number, or panel. Use line numbers only when the material has them. Distinguish physical PDF page numbers from printed page numbers when they differ.
 4. **Observed evidence:** A short quotation, the correspondence between figure labels and colors, the location where a definition first appears, source-data column names, or comparable evidence. For findings across figures, identify both locations.
@@ -129,6 +144,6 @@ Use this structure for each finding:
 
 - Begin with a brief statement of the version and scope reviewed, the areas covered, the materials received and actually checked, and materials that remain unverified.
 - Present findings in order of impact, making observed facts, open verification questions, and optional stylistic improvements easy to distinguish. Write the review in the user's language, and provide proposed English wording in English where appropriate.
-- Report results for every requested area (all six by default). For areas with no findings, state that no applicable issues were found within the reviewed scope. Mark skipped or unreviewed areas as such rather than as passed, and make no guarantee about the scientific correctness of the entire paper.
+- Report results for every requested area (all seven by default). For areas with no findings, state that no applicable issues were found within the reviewed scope. Mark skipped or unreviewed areas as such rather than as passed, and make no guarantee about the scientific correctness of the entire paper.
 - Conclude with issues that could be resolved by additional materials, such as source data, requesting only information not already verified.
 - Apply verified corrections only if the user has also requested editing. Report the changes made and the unresolved items left unchanged. After editing, recheck first definitions, reference numbers, figure mappings, and preservation of scientific meaning.
